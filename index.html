@@ -4,17 +4,39 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Raymon Orient Trading FZE — Metals & Non-Ferrous Metals Trading</title>
-  <meta name="description" content="Raymon Orient Trading FZE — UAE-based trading company specialized in metals and non-ferrous materials, with a focus on zinc ingots (HG / SHG). Transparent, well-documented trade operations for industrial clients." />
+  <meta name="description" content="Raymon Orient Trading FZE — UAE-based supplier of zinc (SHG / RHG / HG) and non-ferrous metals, delivering audit-friendly documentation and full bundle-wise identification for industrial clients." />
   <style>
-    :root{--bg:#0b1020;--fg:#e6eaf2;--muted:#a3adc2;--line:#1b2440;--brand:#60a5fa;--accent:#22d3ee}
-    *{box-sizing:border-box} html,body{height:100%}
-    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,sans-serif;background:radial-gradient(1200px 600px at 80% -10%, #1f2a44 0%, transparent 60%),linear-gradient(180deg,#0b1020,#0b1020 60%, #0d1428);color:var(--fg)}
+    :root{
+      --bg:#0b1020;--fg:#e6eaf2;--muted:#a3adc2;
+      --line:#1b2440;--brand:#60a5fa;--accent:#22d3ee;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,sans-serif;
+      background:radial-gradient(1200px 600px at 80% -10%, #1f2a44 0%, transparent 60%),
+                 linear-gradient(180deg,#0b1020,#0b1020 60%, #0d1428);
+      color:var(--fg);
+    }
     .container{max-width:1080px;margin:0 auto;padding:24px}
     .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
     .brand{display:flex;gap:12px;align-items:center}
-    .logo{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--brand),var(--accent));display:grid;place-items:center;font-weight:800;color:#0b1020}
+    .logo{
+      width:42px;height:42px;
+      border-radius:12px;
+      background:linear-gradient(135deg,var(--brand),var(--accent));
+      display:flex;align-items:center;justify-content:center;
+      overflow:hidden;
+    }
+    .logo img{
+      width:75%;height:75%;object-fit:contain;
+    }
     .brand h1{margin:0;font-size:18px;letter-spacing:.3px}
-    .btn{background:linear-gradient(135deg,var(--brand),var(--accent));color:#0b1020;border:none;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700}
+    .btn{
+      background:linear-gradient(135deg,var(--brand),var(--accent));
+      color:#0b1020;border:none;padding:10px 14px;
+      border-radius:10px;text-decoration:none;font-weight:700;
+    }
     header.hero{padding:64px 0 40px;border-bottom:1px solid var(--line)}
     .kicker{color:var(--accent);font-weight:700;letter-spacing:.15em;text-transform:uppercase;font-size:12px}
     h2{margin:10px 0 12px;font-size:36px;line-height:1.15}
@@ -22,7 +44,11 @@
     section{padding:44px 0;border-bottom:1px solid var(--line)}
     .grid{display:grid;gap:18px}
     .cols-3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-    .card{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:14px;padding:18px}
+    .card{
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--line);
+      border-radius:14px;padding:18px;
+    }
     .card h3{margin:0 0 8px;font-size:18px}
     .muted{color:var(--muted)}
     ul.clean{list-style:none;margin:0;padding:0;display:grid;gap:8px}
@@ -33,79 +59,95 @@
     a{color:var(--fg)} a:hover{opacity:.85}
   </style>
 </head>
+
 <body>
   <div class="container">
+
+    <!-- NAVIGATION -->
     <nav class="nav">
       <div class="brand">
-        <div class="logo">RO</div>
+        <div class="logo">
+          <img src="/images/logo-raymon.png" alt="Raymon Orient Logo">
+        </div>
         <h1>Raymon Orient Trading FZE</h1>
       </div>
       <a class="btn" href="#contact">Contact</a>
     </nav>
 
+    <!-- HERO -->
     <header class="hero">
       <span class="kicker">Metals • Trading • Documentation</span>
       <h2>Metals & Non-Ferrous Metals Trading</h2>
-      <p class="lead">Industrial Materials Supply &amp; Documentation — Dubai, U.A.E.</p>
+      <p class="lead">Industrial Materials Supply & Documentation — Dubai, U.A.E.</p>
     </header>
 
+    <!-- ABOUT -->
     <section id="about">
       <div class="grid cols-3">
         <div class="card" style="grid-column:1/-1">
           <h3>About Us</h3>
           <p class="muted">
-            Raymon Orient Trading FZE is a UAE-based trading company specialized in <strong>metals and non-ferrous materials</strong>, providing transparent and well-documented trade operations for industrial clients. We focus on reliability, compliance, and long-term partnerships across the GCC and Asia.
+            Raymon Orient Trading FZE is a UAE-based trading company specialized in metals and non-ferrous materials,
+            providing transparent and well-documented trade operations for industrial clients.
+            We focus on reliability, compliance, and long-term partnerships across the GCC and Asia.
           </p>
         </div>
       </div>
     </section>
 
+    <!-- OUR FOCUS -->
     <section id="focus">
       <div class="grid cols-3">
         <div class="card">
           <h3>Our Focus</h3>
           <ul class="clean">
-            <li class="row"><div class="dot"></div><div>Base metals — <strong>Zinc (HG / SHG)</strong>, Aluminum, Lead, Copper</div></li>
-            <li class="row"><div class="dot"></div><div>Transparent documentation &amp; reliable supply coordination</div></li>
-            <li class="row"><div class="dot"></div><div>Long-term cooperation with verified regional producers</div></li>
+            <li class="row"><div class="dot"></div><div>Base metals — <strong>Zinc (SHG / RHG / HG)</strong>, Aluminum, Copper, Lead</div></li>
+            <li class="row"><div class="dot"></div><div>Bundle-wise identification &amp; verified zinc documentation (ASTM B6 aligned)</div></li>
+            <li class="row"><div class="dot"></div><div>Reliable coordination with UAE manufacturers &amp; galvanizing plants</div></li>
           </ul>
         </div>
       </div>
     </section>
 
+    <!-- OUR SERVICES -->
     <section id="services">
       <div class="grid cols-3">
         <div class="card">
           <h3>Our Services</h3>
           <ul class="clean">
-            <li class="row"><div class="dot"></div><div>Commercial offers aligned with Incoterms (<strong>EXW, FOB, CIF</strong>)</div></li>
-            <li class="row"><div class="dot"></div><div>Complete documentation — invoice, packing list, COA, BL</div></li>
-            <li class="row"><div class="dot"></div><div>Coordination with inspection or surveyors when required</div></li>
-            <li class="row"><div class="dot"></div><div><strong>Payment terms:</strong> primarily LC-based transactions</div></li>
-            <li class="row"><div class="dot"></div><div>Continuous follow-up from order to delivery</div></li>
+            <li class="row"><div class="dot"></div><div>Structured commercial offers based on international Incoterms (<strong>CIF Jebel Ali, EXW warehouse delivery</strong>)</div></li>
+            <li class="row"><div class="dot"></div><div>Full documentation package (Invoice, Packing List, COA, BL, Certificate of Origin)</div></li>
+            <li class="row"><div class="dot"></div><div>Bundle-wise identification with unique traceable codes (Bundle No, Lot No, Grade, Weight, Year, Full Code)</div></li>
+            <li class="row"><div class="dot"></div><div>Coordination with logistics, surveyors, or inspection companies when required</div></li>
+            <li class="row"><div class="dot"></div><div>End-to-end communication from quotation to delivery</div></li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- Zinc Ingots section -->
+    <!-- ZINC INGOTS -->
     <section id="zinc">
       <div class="grid cols-3">
+
         <div class="card" style="grid-column:1/-1">
           <h3>Zinc Ingots – Raymon Orient Trading</h3>
           <p class="muted">
-            We supply zinc ingots for industrial clients across the UAE and GCC, with clear documentation and bundle-wise identification to support galvanizing, casting, and manufacturing operations.
+            We deliver zinc ingots with clear, audit-friendly documentation and full bundle-wise identification,
+            ensuring reliability for galvanizing, casting, and industrial manufacturing clients throughout the UAE and GCC.
           </p>
         </div>
 
+        <!-- GRADES AVAILABLE -->
         <div class="card">
           <h3>Grades Available</h3>
           <ul class="clean">
-            <li class="row"><div class="dot"></div><div><strong>SHG (Special High Grade)</strong></div></li>
-            <li class="row"><div class="dot"></div><div><strong>HG (High Grade)</strong></div></li>
+            <li class="row"><div class="dot"></div><div><strong>SHG (Special High Grade)</strong> — Zinc purity <strong>99.997%</strong></div></li>
+            <li class="row"><div class="dot"></div><div><strong>RHG (Raymon High Grade)</strong> — Zinc purity <strong>99.980% – 99.996%</strong></div></li>
+            <li class="row"><div class="dot"></div><div><strong>HG (High Grade)</strong> — Zinc purity <strong>99.97%</strong></div></li>
           </ul>
         </div>
 
+        <!-- STANDARDS -->
         <div class="card">
           <h3>Standards &amp; Compliance</h3>
           <ul class="clean">
@@ -115,16 +157,18 @@
           </ul>
         </div>
 
+        <!-- PACKAGING -->
         <div class="card">
           <h3>Packaging</h3>
           <ul class="clean">
-            <li class="row"><div class="dot"></div><div>Approx. <strong>1,000 kg bundles</strong></div></li>
+            <li class="row"><div class="dot"></div><div>Approx. <strong>1,000 kg</strong> bundles</div></li>
             <li class="row"><div class="dot"></div><div>Factory-standard ingot size</div></li>
             <li class="row"><div class="dot"></div><div>Steel strapped (3–4 straps)</div></li>
-            <li class="row"><div class="dot"></div><div>Each bundle tagged with Lot / Bundle number</div></li>
+            <li class="row"><div class="dot"></div><div><strong>Every bundle includes a full identification tag and corresponding verification, ensuring complete traceability.</strong></div></li>
           </ul>
         </div>
 
+        <!-- APPLICATIONS -->
         <div class="card">
           <h3>Applications</h3>
           <ul class="clean">
@@ -135,6 +179,7 @@
           </ul>
         </div>
 
+        <!-- AVAILABILITY -->
         <div class="card">
           <h3>Availability</h3>
           <ul class="clean">
@@ -143,10 +188,11 @@
             <li class="row"><div class="dot"></div><div>Fast coordination with UAE manufacturers &amp; galvanizing plants</div></li>
           </ul>
         </div>
+
       </div>
     </section>
-    <!-- End Zinc Ingots section -->
 
+    <!-- CONTACT -->
     <section id="contact">
       <div class="grid cols-3">
         <div class="card" style="grid-column:1/-1">
@@ -163,9 +209,11 @@
       </div>
     </section>
 
+    <!-- FOOTER -->
     <footer>
       © 2025 Raymon Orient Trading FZE. All rights reserved.
     </footer>
+
   </div>
 </body>
 </html>
