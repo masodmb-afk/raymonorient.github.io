@@ -8,28 +8,29 @@
 
   <style>
     :root{
-      --bg:#0b1020;--fg:#e6eaf2;--muted:#a3adc2;
-      --line:#1b2440;--brand:#60a5fa;--accent:#22d3ee;
+      --bg:#07101f;--fg:#f3f7fc;--muted:#9eabc0;
+      --line:#21314b;--panel:#0d1729;--panel-2:#101d31;
+      --brand:#60a5fa;--accent:#22d3ee;
     }
     *{box-sizing:border-box}
     body{
       margin:0;
       font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,sans-serif;
-      background:radial-gradient(1200px 600px at 80% -10%, #1f2a44 0%, transparent 60%),
-                 linear-gradient(180deg,#0b1020,#0b1020 60%, #0d1428);
+      background:radial-gradient(900px 520px at 83% 0%, rgba(34,211,238,.09), transparent 60%),
+                 linear-gradient(180deg,#07101f,#07101f 60%,#091528);
       color:var(--fg);
     }
     .container{max-width:1080px;margin:0 auto;padding:24px}
 
     /* NAVIGATION */
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0 8px;min-height:84px}
     .brand{display:flex;gap:12px;align-items:center}
 
     /* LOGO FIXED VERSION */
     .logo{
-      width:42px;
-      height:42px;
-      border-radius:12px;
+      width:46px;
+      height:46px;
+      border-radius:13px;
       background:#ffffff;
       display:flex;
       align-items:center;
@@ -42,17 +43,62 @@
       object-fit:contain;
     }
 
-    .brand h1{margin:0;font-size:18px;letter-spacing:.3px}
+    .brand h1{margin:0;font-size:16px;letter-spacing:.2px}
+    .brand-meta{margin-top:3px;color:var(--muted);font-size:10px;letter-spacing:.14em;text-transform:uppercase}
     .btn{
       background:linear-gradient(135deg,var(--brand),var(--accent));
-      color:#0b1020;border:none;padding:10px 14px;
-      border-radius:10px;text-decoration:none;font-weight:700;
+      color:#041321;border:none;padding:11px 18px;
+      border-radius:10px;text-decoration:none;font-size:13px;font-weight:800;
+      display:inline-flex;align-items:center;justify-content:center;
+      box-shadow:0 8px 26px rgba(34,211,238,.16);
     }
+    .btn-secondary{color:var(--fg);border:1px solid #30415d;background:rgba(255,255,255,.025);box-shadow:none}
 
-    header.hero{padding:64px 0 40px;border-bottom:1px solid var(--line)}
-    .kicker{color:var(--accent);font-weight:700;letter-spacing:.15em;text-transform:uppercase;font-size:12px}
-    h2{margin:10px 0 12px;font-size:36px;line-height:1.15}
-    p.lead{color:var(--muted);font-size:18px;max-width:760px}
+    header.hero{
+      position:relative;min-height:545px;margin-top:20px;padding:0;overflow:hidden;
+      border:1px solid var(--line);border-radius:24px;
+      background:linear-gradient(135deg,rgba(16,29,49,.98),rgba(8,17,32,.96));
+      box-shadow:0 28px 70px rgba(0,0,0,.28);
+    }
+    .hero-copy{
+      position:relative;z-index:2;width:62%;min-height:545px;padding:58px 54px;
+      display:flex;flex-direction:column;justify-content:center;
+    }
+    .kicker{
+      display:flex;align-items:center;gap:9px;margin-bottom:20px;
+      color:var(--accent);font-weight:800;letter-spacing:.18em;text-transform:uppercase;font-size:11px;
+    }
+    .kicker::before{content:"";width:28px;height:2px;border-radius:9px;background:var(--accent)}
+    .hero h2{margin:0;max-width:610px;font-size:52px;line-height:1.04;letter-spacing:-.045em}
+    .hero h2 span{
+      color:transparent;background:linear-gradient(90deg,var(--brand),var(--accent));
+      background-clip:text;-webkit-background-clip:text;
+    }
+    p.lead{color:#b7c2d3;font-size:16px;line-height:1.72;max-width:570px;margin:22px 0 0}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+    .trust-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px}
+    .trust{
+      display:flex;align-items:center;gap:8px;padding:8px 11px;
+      border:1px solid rgba(96,165,250,.18);border-radius:999px;
+      color:#b9c5d5;background:rgba(5,13,26,.48);font-size:11px;
+    }
+    .trust::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px rgba(34,211,238,.8)}
+    .hero-visual{position:absolute;inset:0 0 0 47%;min-height:545px}
+    .hero-visual::before{
+      content:"";position:absolute;z-index:1;inset:0;
+      background:linear-gradient(90deg,var(--panel) 0%,rgba(13,23,41,.23) 34%,rgba(7,16,31,.03) 100%);
+    }
+    .hero-visual img{width:100%;height:100%;object-fit:cover;object-position:100% center;filter:saturate(.92) contrast(1.03)}
+    .grade-panel{
+      position:absolute;z-index:2;right:24px;bottom:24px;width:290px;padding:15px 18px;
+      border:1px solid rgba(255,255,255,.18);border-radius:15px;
+      background:rgba(6,14,27,.82);box-shadow:0 16px 40px rgba(0,0,0,.3);
+      backdrop-filter:blur(12px);
+    }
+    .grade-title{margin-bottom:10px;color:#fff;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+    .grades{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+    .grade{padding:8px 4px;border:1px solid rgba(96,165,250,.2);border-radius:9px;color:#c4cfdd;background:rgba(255,255,255,.035);font-size:9px;text-align:center}
+    .grade strong{display:block;margin-bottom:3px;color:var(--accent);font-size:12px}
 
     section{padding:44px 0;border-bottom:1px solid var(--line)}
     .grid{display:grid;gap:18px}
@@ -72,6 +118,30 @@
     footer{padding:28px 0;color:var(--muted)}
     .contact-row{display:grid;gap:10px}
     a{color:var(--fg)} a:hover{opacity:.85}
+
+    @media (max-width:860px){
+      .container{padding:16px}
+      header.hero{min-height:0;margin-top:12px}
+      .hero-copy{width:100%;min-height:0;padding:46px 28px 34px}
+      .hero h2{font-size:44px}
+      .hero-visual{position:relative;inset:auto;min-height:360px}
+      .hero-visual::before{background:linear-gradient(180deg,var(--panel) 0%,rgba(13,23,41,0) 45%)}
+      .grade-panel{right:18px;bottom:18px}
+      section{padding:34px 0}
+    }
+    @media (max-width:520px){
+      .nav{min-height:72px}
+      .logo{width:42px;height:42px;border-radius:12px}
+      .brand h1{font-size:14px}
+      .brand-meta{display:none}
+      .nav>.btn{padding:10px 13px}
+      header.hero{border-radius:18px}
+      .hero-copy{padding:40px 22px 30px}
+      .hero h2{font-size:38px}
+      p.lead{font-size:14px}
+      .hero-visual{min-height:310px}
+      .grade-panel{width:calc(100% - 36px)}
+    }
   </style>
 </head>
 
@@ -84,16 +154,41 @@
         <div class="logo">
           <img src="/images/logo-raymon.png" alt="Raymon Orient Logo">
         </div>
-        <h1>Raymon Orient Trading FZE</h1>
+        <div>
+          <h1>Raymon Orient Trading FZE</h1>
+          <div class="brand-meta">Metals · Trading · Documentation</div>
+        </div>
       </div>
       <a class="btn" href="#contact">Contact</a>
     </nav>
 
     <!-- HERO -->
     <header class="hero">
-      <span class="kicker">Metals • Trading • Documentation</span>
-      <h2>Metals & Non-Ferrous Metals Trading</h2>
-      <p class="lead">Industrial Materials Supply & Documentation — Dubai, U.A.E.</p>
+      <div class="hero-copy">
+        <div class="kicker">UAE-Based Metals Trading</div>
+        <h2>Reliable Zinc Supply. <span>Verified Quality.</span></h2>
+        <p class="lead">SHG, RHG and HG zinc ingots supplied with ASTM B6 testing, bundle-wise identification and complete commercial documentation.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#zinc">View Zinc Grades</a>
+          <a class="btn btn-secondary" href="#contact">Contact Us</a>
+        </div>
+        <div class="trust-row">
+          <div class="trust">ASTM B6 Aligned</div>
+          <div class="trust">Bundle-wise ID</div>
+          <div class="trust">UAE Operations</div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="/images/zinc-hero.webp" alt="Zinc ingots marked ZINC">
+        <div class="grade-panel">
+          <div class="grade-title">Zinc Grades</div>
+          <div class="grades">
+            <div class="grade"><strong>SHG</strong>99.997%</div>
+            <div class="grade"><strong>RHG</strong>99.980% &lt; Zn<br>&lt; 99.990%</div>
+            <div class="grade"><strong>HG</strong>99.97%</div>
+          </div>
+        </div>
+      </div>
     </header>
 
     <!-- ABOUT -->
@@ -156,7 +251,7 @@
           <h3>Grades Available</h3>
           <ul class="clean">
             <li class="row"><div class="dot"></div><div><strong>SHG (Special High Grade)</strong> — Zinc purity <strong>99.997%</strong></div></li>
-            <li class="row"><div class="dot"></div><div><strong>RHG (Raymon High Grade)</strong> — Zinc purity <strong>99.980% – 99.996%</strong></div></li>
+            <li class="row"><div class="dot"></div><div><strong>RHG (Raymon High Grade)</strong> — Raymon Orient proprietary zinc grade positioned between HG and SHG, with zinc purity <strong>99.980% &lt; Zn &lt; 99.990%</strong></div></li>
             <li class="row"><div class="dot"></div><div><strong>HG (High Grade)</strong> — Zinc purity <strong>99.97%</strong></div></li>
           </ul>
         </div>
