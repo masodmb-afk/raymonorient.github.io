@@ -225,8 +225,52 @@
     li.row{display:flex;gap:10px;align-items:flex-start}
     .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);margin-top:8px}
 
-    footer{padding:28px 0;color:var(--muted)}
-    .contact-row{display:grid;gap:10px}
+    .contact-section{padding:64px 0 36px;border-bottom:0}
+    .contact-layout{display:grid;grid-template-columns:1.08fr .92fr;gap:18px;align-items:stretch}
+    .contact-information,.contact-action{
+      border:1px solid var(--line);border-radius:18px;
+      background:linear-gradient(145deg,rgba(16,29,49,.94),rgba(9,18,34,.94));
+    }
+    .contact-information{padding:32px}
+    .contact-label{color:var(--accent);font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
+    .contact-information h2{margin:10px 0 14px;font-size:34px;line-height:1.14;letter-spacing:-.03em}
+    .contact-intro{max-width:600px;margin:0;color:var(--muted);font-size:13px;line-height:1.68}
+    .contact-details{display:grid;grid-template-columns:repeat(2,1fr);gap:11px;margin-top:27px}
+    .contact-item{
+      padding:14px 15px;border:1px solid rgba(96,165,250,.16);border-radius:11px;
+      background:rgba(255,255,255,.022);
+    }
+    .contact-item.wide{grid-column:1/-1}
+    .contact-key{margin-bottom:6px;color:#718099;font-size:9px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+    .contact-value{color:#d8e1ec;font-size:12px;line-height:1.55}
+    .contact-value a{text-decoration:none}
+    .contact-action{
+      display:flex;flex-direction:column;justify-content:center;padding:34px;
+      background:radial-gradient(430px 260px at 100% 0%,rgba(34,211,238,.13),transparent 62%),
+                 linear-gradient(145deg,rgba(15,31,50,.98),rgba(8,20,36,.98));
+    }
+    .action-kicker{color:var(--accent);font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+    .contact-action h3{margin:12px 0 12px;font-size:27px;line-height:1.2;letter-spacing:-.025em}
+    .contact-action>p{margin:0;color:var(--muted);font-size:13px;line-height:1.68}
+    .contact-buttons{display:flex;flex-wrap:wrap;gap:10px;margin-top:25px}
+    .contact-buttons .btn{min-width:132px}
+    .document-note{
+      margin-top:27px;padding-top:19px;border-top:1px solid rgba(96,165,250,.16);
+      color:#8493a9;font-size:10px;line-height:1.55;
+    }
+    .site-footer{
+      display:flex;align-items:center;justify-content:space-between;gap:24px;
+      padding:24px 0 32px;border-top:1px solid var(--line);color:var(--muted);
+    }
+    .footer-brand{display:flex;align-items:center;gap:11px}
+    .footer-logo{
+      width:34px;height:34px;display:grid;place-items:center;overflow:hidden;
+      border-radius:9px;background:#fff;
+    }
+    .footer-logo img{width:100%;height:100%;object-fit:contain}
+    .footer-company{color:#d9e2ed;font-size:12px;font-weight:800}
+    .footer-tagline{margin-top:3px;color:#6f7e94;font-size:9px;letter-spacing:.1em;text-transform:uppercase}
+    .footer-copy{font-size:10px;text-align:right}
     a{color:var(--fg)} a:hover{opacity:.85}
 
     @media (max-width:860px){
@@ -251,6 +295,8 @@
       .product-grade{min-height:0}
       .product-grade.raymon-grade{transform:none}
       .spec-grid{grid-template-columns:repeat(2,1fr)}
+      .contact-section{padding:48px 0 30px}
+      .contact-layout{grid-template-columns:1fr}
     }
     @media (max-width:520px){
       .nav{min-height:72px}
@@ -271,6 +317,14 @@
       .zinc-heading h2{font-size:30px}
       .product-grade{padding:22px}
       .spec-grid{grid-template-columns:1fr}
+      .contact-information,.contact-action{padding:24px}
+      .contact-information h2{font-size:30px}
+      .contact-details{grid-template-columns:1fr}
+      .contact-item.wide{grid-column:auto}
+      .contact-buttons{display:grid}
+      .contact-buttons .btn{width:100%}
+      .site-footer{align-items:flex-start;flex-direction:column}
+      .footer-copy{text-align:left}
     }
   </style>
 </head>
@@ -516,25 +570,60 @@
     </section>
 
     <!-- CONTACT -->
-    <section id="contact">
-      <div class="grid cols-3">
-        <div class="card" style="grid-column:1/-1">
-          <h3>Contact</h3>
-          <div class="contact-row">
-            <div><strong>Email:</strong> <a href="mailto:info@raymonorient.com">info@raymonorient.com</a></div>
-            <div><strong>Mobile / WhatsApp (UAE):</strong> <a href="tel:+971506976910">+971 50 697 6910</a></div>
-            <div><strong>Mobile / WhatsApp (Canada):</strong> <a href="tel:+16726735621">+1 672 673 5621</a></div>
-            <div><strong>Address:</strong> PO Box 40550, Office No. M17, Arabilla Building, Hor Al Anz East, Dubai – U.A.E.</div>
-            <div class="muted"><strong>Office Hours:</strong> Monday – Friday, 9:00 AM – 6:00 PM (UAE Time)</div>
-            <div class="muted"><em>For verified clients, company documents and certifications are available upon request.</em></div>
+    <section id="contact" class="contact-section">
+      <div class="contact-layout">
+        <div class="contact-information">
+          <div class="contact-label">Contact</div>
+          <h2>Let’s Discuss Your Zinc Requirements</h2>
+          <p class="contact-intro">Contact our team for product availability, zinc grade specifications and commercial enquiries.</p>
+
+          <div class="contact-details">
+            <div class="contact-item">
+              <div class="contact-key">Email</div>
+              <div class="contact-value"><a href="mailto:info@raymonorient.com">info@raymonorient.com</a></div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-key">UAE Mobile / WhatsApp</div>
+              <div class="contact-value"><a href="tel:+971506976910">+971 50 697 6910</a></div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-key">Canada Mobile / WhatsApp</div>
+              <div class="contact-value"><a href="tel:+16726735621">+1 672 673 5621</a></div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-key">Office Hours</div>
+              <div class="contact-value">Monday – Friday, 9:00 AM – 6:00 PM (UAE Time)</div>
+            </div>
+            <div class="contact-item wide">
+              <div class="contact-key">Address</div>
+              <div class="contact-value">PO Box 40550, Office No. M17, Arabilla Building, Hor Al Anz East, Dubai – U.A.E.</div>
+            </div>
           </div>
         </div>
+
+        <aside class="contact-action">
+          <div class="action-kicker">Direct Enquiry</div>
+          <h3>Ready to request a quotation?</h3>
+          <p>Send your required zinc grade, quantity and preferred delivery term. Our team will respond with availability and a structured commercial offer.</p>
+          <div class="contact-buttons">
+            <a class="btn" href="mailto:info@raymonorient.com">Email Us</a>
+            <a class="btn btn-secondary" href="https://wa.me/971506976910" target="_blank" rel="noopener">WhatsApp UAE</a>
+          </div>
+          <div class="document-note">For verified clients, company documents and certifications are available upon request.</div>
+        </aside>
       </div>
     </section>
 
     <!-- FOOTER -->
-    <footer>
-      © 2025 Raymon Orient Trading FZE. All rights reserved.
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <div class="footer-logo"><img src="/images/logo-raymon.png" alt="Raymon Orient Logo"></div>
+        <div>
+          <div class="footer-company">Raymon Orient Trading FZE</div>
+          <div class="footer-tagline">Metals · Trading · Documentation</div>
+        </div>
+      </div>
+      <div class="footer-copy">© 2025 Raymon Orient Trading FZE. All rights reserved.</div>
     </footer>
 
   </div>
