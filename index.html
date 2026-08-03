@@ -104,6 +104,36 @@
     .grid{display:grid;gap:18px}
     .cols-3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
 
+    .why-section{padding:64px 0}
+    .why-heading{
+      display:grid;grid-template-columns:.78fr 1.22fr;gap:48px;
+      align-items:end;margin-bottom:28px;
+    }
+    .why-label{color:var(--accent);font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
+    .why-heading h2{margin:10px 0 0;font-size:34px;line-height:1.14;letter-spacing:-.025em}
+    .why-intro{margin:0;color:var(--muted);font-size:15px;line-height:1.75}
+    .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .feature-card{
+      position:relative;min-height:226px;overflow:hidden;padding:24px;
+      border:1px solid var(--line);border-radius:16px;
+      background:linear-gradient(145deg,rgba(16,29,49,.92),rgba(10,19,35,.92));
+    }
+    .feature-card::after{
+      content:"";position:absolute;right:0;bottom:0;left:0;height:2px;
+      background:linear-gradient(90deg,transparent,var(--brand),var(--accent),transparent);
+      opacity:.7;
+    }
+    .feature-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
+    .feature-icon{
+      width:44px;height:44px;display:grid;place-items:center;
+      border:1px solid rgba(34,211,238,.26);border-radius:12px;
+      color:var(--accent);background:rgba(34,211,238,.06);
+    }
+    .feature-icon svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+    .feature-number{color:#52627b;font-size:12px;font-weight:800;letter-spacing:.12em}
+    .feature-card h3{margin:0 0 10px;font-size:18px}
+    .feature-card p{margin:0;color:var(--muted);font-size:13px;line-height:1.65}
+
     .card{
       background:rgba(255,255,255,.03);
       border:1px solid var(--line);
@@ -128,6 +158,10 @@
       .hero-visual::before{background:linear-gradient(180deg,var(--panel) 0%,rgba(13,23,41,0) 45%)}
       .grade-panel{right:18px;bottom:18px}
       section{padding:34px 0}
+      .why-section{padding:48px 0}
+      .why-heading{grid-template-columns:1fr;gap:18px;align-items:start}
+      .why-grid{grid-template-columns:1fr}
+      .feature-card{min-height:0}
     }
     @media (max-width:520px){
       .nav{min-height:72px}
@@ -141,6 +175,8 @@
       p.lead{font-size:14px}
       .hero-visual{min-height:310px}
       .grade-panel{width:calc(100% - 36px)}
+      .why-heading h2{font-size:30px}
+      .feature-card{padding:22px}
     }
   </style>
 </head>
@@ -191,31 +227,63 @@
       </div>
     </header>
 
-    <!-- ABOUT -->
-    <section id="about">
-      <div class="grid cols-3">
-        <div class="card" style="grid-column:1/-1">
-          <h3>About Us</h3>
-          <p class="muted">
-            Raymon Orient Trading FZE is a UAE-based trading company specialized in metals and non-ferrous materials,
-            providing transparent and well-documented trade operations for industrial clients.
-            We focus on reliability, compliance, and long-term partnerships across the GCC and Asia.
-          </p>
+    <!-- WHY RAYMON ORIENT -->
+    <section id="about" class="why-section">
+      <div class="why-heading">
+        <div>
+          <div class="why-label">Why Raymon Orient</div>
+          <h2>A structured approach to industrial zinc supply.</h2>
         </div>
+        <p class="why-intro">
+          Raymon Orient Trading FZE is a UAE-based metals trading company focused on zinc and non-ferrous materials.
+          We support industrial clients across the GCC and Asia through reliable supply, clear documentation and long-term partnerships.
+        </p>
       </div>
-    </section>
 
-    <!-- OUR FOCUS -->
-    <section id="focus">
-      <div class="grid cols-3">
-        <div class="card">
-          <h3>Our Focus</h3>
-          <ul class="clean">
-            <li class="row"><div class="dot"></div><div>Base metals — <strong>Zinc (SHG / RHG / HG)</strong>, Aluminum, Copper, Lead</div></li>
-            <li class="row"><div class="dot"></div><div>Bundle-wise identification &amp; verified zinc documentation (ASTM B6 aligned)</div></li>
-            <li class="row"><div class="dot"></div><div>Reliable coordination with UAE manufacturers &amp; galvanizing plants</div></li>
-          </ul>
-        </div>
+      <div class="why-grid">
+        <article class="feature-card">
+          <div class="feature-top">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3 19 6v5c0 4.6-2.9 8.5-7 10-4.1-1.5-7-5.4-7-10V6l7-3Z"/>
+                <path d="m9 12 2 2 4-4"/>
+              </svg>
+            </div>
+            <span class="feature-number">01</span>
+          </div>
+          <h3>Verified Zinc Grades</h3>
+          <p>SHG, proprietary RHG and HG zinc grades supported by ASTM B6 testing and clear specifications.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-top">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 5h7l9 9-6 6-9-9V5Z"/>
+                <circle cx="8.5" cy="8.5" r="1.4"/>
+              </svg>
+            </div>
+            <span class="feature-number">02</span>
+          </div>
+          <h3>Bundle-wise Traceability</h3>
+          <p>Identification tags and traceable records for Bundle No, Lot No, Grade, Weight, Year and Full Code.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-top">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="5" cy="12" r="2"/>
+                <circle cx="19" cy="7" r="2"/>
+                <circle cx="19" cy="17" r="2"/>
+                <path d="m7 11 10-3M7 13l10 3"/>
+              </svg>
+            </div>
+            <span class="feature-number">03</span>
+          </div>
+          <h3>UAE Trade Coordination</h3>
+          <p>Commercial, logistics and delivery coordination for industrial buyers throughout the UAE and GCC.</p>
+        </article>
       </div>
     </section>
 
