@@ -134,6 +134,34 @@
     .feature-card h3{margin:0 0 10px;font-size:18px}
     .feature-card p{margin:0;color:var(--muted);font-size:13px;line-height:1.65}
 
+    .services-section{padding:64px 0}
+    .services-layout{display:grid;grid-template-columns:.82fr 1.18fr;gap:70px;align-items:start}
+    .services-label{color:var(--accent);font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
+    .services-summary h2{margin:10px 0 18px;font-size:36px;line-height:1.12;letter-spacing:-.03em}
+    .services-summary>p{margin:0;color:var(--muted);font-size:14px;line-height:1.72}
+    .delivery-label{margin-top:28px;color:#718099;font-size:10px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+    .delivery-options{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:10px}
+    .delivery-option{
+      padding:13px 14px;border:1px solid rgba(96,165,250,.2);border-radius:11px;
+      color:#c6d0df;background:rgba(255,255,255,.025);font-size:11px;line-height:1.35;
+    }
+    .delivery-option strong{display:block;margin-bottom:3px;color:var(--accent);font-size:13px}
+    .service-flow{display:grid}
+    .service-step{position:relative;display:grid;grid-template-columns:48px 1fr;gap:18px;padding-bottom:26px}
+    .service-step:not(:last-child)::after{
+      content:"";position:absolute;top:44px;bottom:0;left:21px;width:1px;
+      background:linear-gradient(180deg,rgba(34,211,238,.45),rgba(96,165,250,.08));
+    }
+    .step-number{
+      position:relative;z-index:1;width:44px;height:44px;display:grid;place-items:center;
+      border:1px solid rgba(34,211,238,.3);border-radius:12px;
+      color:var(--accent);background:var(--bg);font-size:11px;font-weight:800;letter-spacing:.08em;
+    }
+    .step-content{padding:3px 0 25px;border-bottom:1px solid rgba(33,49,75,.8)}
+    .service-step:last-child .step-content{border-bottom:0;padding-bottom:0}
+    .step-content h3{margin:0 0 8px;font-size:18px}
+    .step-content p{margin:0;color:var(--muted);font-size:13px;line-height:1.65}
+
     .card{
       background:rgba(255,255,255,.03);
       border:1px solid var(--line);
@@ -162,6 +190,9 @@
       .why-heading{grid-template-columns:1fr;gap:18px;align-items:start}
       .why-grid{grid-template-columns:1fr}
       .feature-card{min-height:0}
+      .services-section{padding:48px 0}
+      .services-layout{grid-template-columns:1fr;gap:38px}
+      .services-summary h2{font-size:32px}
     }
     @media (max-width:520px){
       .nav{min-height:72px}
@@ -177,6 +208,8 @@
       .grade-panel{width:calc(100% - 36px)}
       .why-heading h2{font-size:30px}
       .feature-card{padding:22px}
+      .delivery-options{grid-template-columns:1fr}
+      .service-step{grid-template-columns:44px 1fr;gap:14px}
     }
   </style>
 </head>
@@ -288,17 +321,52 @@
     </section>
 
     <!-- OUR SERVICES -->
-    <section id="services">
-      <div class="grid cols-3">
-        <div class="card">
-          <h3>Our Services</h3>
-          <ul class="clean">
-            <li class="row"><div class="dot"></div><div>Structured commercial offers based on international Incoterms (<strong>CIF Jebel Ali, EXW warehouse delivery</strong>)</div></li>
-            <li class="row"><div class="dot"></div><div>Full documentation package (Invoice, Packing List, COA, BL, Certificate of Origin)</div></li>
-            <li class="row"><div class="dot"></div><div>Bundle-wise identification with unique traceable codes (Bundle No, Lot No, Grade, Weight, Year, Full Code)</div></li>
-            <li class="row"><div class="dot"></div><div>Coordination with logistics, surveyors, or inspection companies when required</div></li>
-            <li class="row"><div class="dot"></div><div>End-to-end communication from quotation to delivery</div></li>
-          </ul>
+    <section id="services" class="services-section">
+      <div class="services-layout">
+        <div class="services-summary">
+          <div class="services-label">Our Services</div>
+          <h2>From quotation to coordinated delivery.</h2>
+          <p>A clear commercial process built around confirmed specifications, transparent documentation and reliable execution.</p>
+
+          <div class="delivery-label">Available delivery terms</div>
+          <div class="delivery-options">
+            <div class="delivery-option"><strong>CIF</strong>Jebel Ali</div>
+            <div class="delivery-option"><strong>EXW</strong>Dubai Warehouse</div>
+          </div>
+        </div>
+
+        <div class="service-flow">
+          <article class="service-step">
+            <div class="step-number">01</div>
+            <div class="step-content">
+              <h3>Commercial Offer</h3>
+              <p>Grade, quantity and Incoterm confirmed in a structured commercial offer.</p>
+            </div>
+          </article>
+
+          <article class="service-step">
+            <div class="step-number">02</div>
+            <div class="step-content">
+              <h3>Documentation &amp; Traceability</h3>
+              <p>Invoice, Packing List, COA, BL, Certificate of Origin and bundle identification.</p>
+            </div>
+          </article>
+
+          <article class="service-step">
+            <div class="step-number">03</div>
+            <div class="step-content">
+              <h3>Logistics &amp; Inspection</h3>
+              <p>Coordination with logistics providers, surveyors and inspection companies when required.</p>
+            </div>
+          </article>
+
+          <article class="service-step">
+            <div class="step-number">04</div>
+            <div class="step-content">
+              <h3>Delivery &amp; Follow-up</h3>
+              <p>Clear communication from order confirmation through final delivery.</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
