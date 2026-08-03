@@ -162,6 +162,58 @@
     .step-content h3{margin:0 0 8px;font-size:18px}
     .step-content p{margin:0;color:var(--muted);font-size:13px;line-height:1.65}
 
+    .zinc-section{padding:64px 0}
+    .zinc-heading{
+      display:grid;grid-template-columns:.82fr 1.18fr;gap:48px;
+      align-items:end;margin-bottom:34px;
+    }
+    .zinc-label{color:var(--accent);font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
+    .zinc-heading h2{margin:10px 0 0;font-size:36px;line-height:1.12;letter-spacing:-.03em}
+    .zinc-intro{margin:0;color:var(--muted);font-size:14px;line-height:1.72}
+    .grade-showcase{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch;margin-bottom:22px}
+    .product-grade{
+      position:relative;min-height:248px;overflow:hidden;padding:25px;
+      border:1px solid var(--line);border-radius:17px;
+      background:linear-gradient(145deg,rgba(16,29,49,.94),rgba(9,18,34,.94));
+    }
+    .product-grade::after{
+      content:"";position:absolute;right:0;bottom:0;left:0;height:2px;
+      background:linear-gradient(90deg,transparent,rgba(96,165,250,.75),transparent);
+    }
+    .product-grade.raymon-grade{
+      transform:translateY(-6px);border-color:rgba(34,211,238,.58);
+      background:radial-gradient(400px 190px at 90% 0%,rgba(34,211,238,.13),transparent 60%),
+                 linear-gradient(145deg,rgba(16,33,52,.98),rgba(8,22,38,.98));
+      box-shadow:0 22px 48px rgba(0,0,0,.22),0 0 0 1px rgba(34,211,238,.06) inset;
+    }
+    .product-grade.raymon-grade::after{background:linear-gradient(90deg,var(--brand),var(--accent))}
+    .grade-badge{
+      position:absolute;top:20px;right:20px;padding:6px 9px;
+      border:1px solid rgba(34,211,238,.35);border-radius:999px;
+      color:var(--accent);background:rgba(34,211,238,.08);
+      font-size:9px;font-weight:900;letter-spacing:.12em;
+    }
+    .grade-code{color:var(--accent);font-size:12px;font-weight:900;letter-spacing:.18em}
+    .grade-name{margin:9px 0 30px;color:#c7d1df;font-size:13px}
+    .purity-label{color:#6f7e96;font-size:9px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+    .purity-value{margin-top:7px;color:#fff;font-size:29px;font-weight:800;letter-spacing:-.03em}
+    .purity-value.range{font-size:21px;line-height:1.25;letter-spacing:-.02em}
+    .grade-note{margin:18px 0 0;color:#9fbed0;font-size:12px;line-height:1.6}
+    .spec-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .spec-card{
+      padding:21px;border:1px solid var(--line);border-radius:14px;
+      background:rgba(255,255,255,.025);
+    }
+    .spec-index{margin-bottom:19px;color:#52627b;font-size:10px;font-weight:800;letter-spacing:.14em}
+    .spec-card h3{margin:0 0 15px;font-size:16px}
+    .spec-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+    .spec-list li{position:relative;padding-left:15px;color:var(--muted);font-size:11px;line-height:1.5}
+    .spec-list li::before{
+      content:"";position:absolute;top:.55em;left:0;width:5px;height:5px;
+      border-radius:50%;background:var(--accent);box-shadow:0 0 8px rgba(34,211,238,.5);
+    }
+    .spec-list strong{color:#dce5f0}
+
     .card{
       background:rgba(255,255,255,.03);
       border:1px solid var(--line);
@@ -193,6 +245,12 @@
       .services-section{padding:48px 0}
       .services-layout{grid-template-columns:1fr;gap:38px}
       .services-summary h2{font-size:32px}
+      .zinc-section{padding:48px 0}
+      .zinc-heading{grid-template-columns:1fr;gap:18px;align-items:start}
+      .grade-showcase{grid-template-columns:1fr}
+      .product-grade{min-height:0}
+      .product-grade.raymon-grade{transform:none}
+      .spec-grid{grid-template-columns:repeat(2,1fr)}
     }
     @media (max-width:520px){
       .nav{min-height:72px}
@@ -210,6 +268,9 @@
       .feature-card{padding:22px}
       .delivery-options{grid-template-columns:1fr}
       .service-step{grid-template-columns:44px 1fr;gap:14px}
+      .zinc-heading h2{font-size:30px}
+      .product-grade{padding:22px}
+      .spec-grid{grid-template-columns:1fr}
     }
   </style>
 </head>
@@ -372,67 +433,85 @@
     </section>
 
     <!-- ZINC INGOTS -->
-    <section id="zinc">
-      <div class="grid cols-3">
-        <div class="card" style="grid-column:1/-1">
-          <h3>Zinc Ingots – Raymon Orient Trading</h3>
-          <p class="muted">
-            We deliver zinc ingots with clear, audit-friendly documentation and full bundle-wise identification,
-            ensuring reliability for galvanizing, casting, and industrial manufacturing clients throughout the UAE and GCC.
-          </p>
+    <section id="zinc" class="zinc-section">
+      <div class="zinc-heading">
+        <div>
+          <div class="zinc-label">Zinc Ingots</div>
+          <h2>Zinc Grades for Industrial Supply</h2>
         </div>
+        <p class="zinc-intro">
+          We deliver zinc ingots with clear, audit-friendly documentation and full bundle-wise identification,
+          ensuring reliability for galvanizing, casting and industrial manufacturing clients throughout the UAE and GCC.
+        </p>
+      </div>
 
-        <!-- GRADES AVAILABLE -->
-        <div class="card">
-          <h3>Grades Available</h3>
-          <ul class="clean">
-            <li class="row"><div class="dot"></div><div><strong>SHG (Special High Grade)</strong> — Zinc purity <strong>99.997%</strong></div></li>
-            <li class="row"><div class="dot"></div><div><strong>RHG (Raymon High Grade)</strong> — Raymon Orient proprietary zinc grade positioned between HG and SHG, with zinc purity <strong>99.980% &lt; Zn &lt; 99.990%</strong></div></li>
-            <li class="row"><div class="dot"></div><div><strong>HG (High Grade)</strong> — Zinc purity <strong>99.97%</strong></div></li>
-          </ul>
-        </div>
+      <div class="grade-showcase">
+        <article class="product-grade">
+          <div class="grade-code">SHG</div>
+          <div class="grade-name">Special High Grade</div>
+          <div class="purity-label">Zinc Purity</div>
+          <div class="purity-value">99.997%</div>
+        </article>
 
-        <!-- STANDARDS -->
-        <div class="card">
+        <article class="product-grade raymon-grade">
+          <div class="grade-badge">RAYMON GRADE</div>
+          <div class="grade-code">RHG</div>
+          <div class="grade-name">Raymon High Grade</div>
+          <div class="purity-label">Zinc Purity</div>
+          <div class="purity-value range">99.980% &lt; Zn &lt; 99.990%</div>
+          <p class="grade-note">A proprietary Raymon Orient grade positioned between HG and SHG.</p>
+        </article>
+
+        <article class="product-grade">
+          <div class="grade-code">HG</div>
+          <div class="grade-name">High Grade</div>
+          <div class="purity-label">Zinc Purity</div>
+          <div class="purity-value">99.97%</div>
+        </article>
+      </div>
+
+      <div class="spec-grid">
+        <article class="spec-card">
+          <div class="spec-index">01 / STANDARD</div>
           <h3>Standards &amp; Compliance</h3>
-          <ul class="clean">
-            <li class="row"><div class="dot"></div><div>ASTM B6</div></li>
-            <li class="row"><div class="dot"></div><div>LME-listed specifications</div></li>
-            <li class="row"><div class="dot"></div><div>Consistent quality for industrial applications</div></li>
+          <ul class="spec-list">
+            <li>ASTM B6</li>
+            <li>LME-listed specifications</li>
+            <li>Consistent quality for industrial applications</li>
           </ul>
-        </div>
+        </article>
 
-        <!-- PACKAGING -->
-        <div class="card">
+        <article class="spec-card">
+          <div class="spec-index">02 / HANDLING</div>
           <h3>Packaging</h3>
-          <ul class="clean">
-            <li class="row"><div class="dot"></div><div>Approx. <strong>1,000 kg</strong> bundles</div></li>
-            <li class="row"><div class="dot"></div><div>Factory-standard ingot size</div></li>
-            <li class="row"><div class="dot"></div><div>Steel strapped (3–4 straps)</div></li>
-            <li class="row"><div class="dot"></div><div><strong>Every bundle includes a full identification tag and corresponding verification, ensuring complete traceability.</strong></div></li>
+          <ul class="spec-list">
+            <li>Approx. <strong>1,000 kg</strong> bundles</li>
+            <li>Factory-standard ingot size</li>
+            <li>Steel strapped (3–4 straps)</li>
+            <li>Full identification tag and corresponding verification for every bundle</li>
           </ul>
-        </div>
+        </article>
 
-        <!-- APPLICATIONS -->
-        <div class="card">
+        <article class="spec-card">
+          <div class="spec-index">03 / INDUSTRY</div>
           <h3>Applications</h3>
-          <ul class="clean">
-            <li class="row"><div class="dot"></div><div>Galvanizing</div></li>
-            <li class="row"><div class="dot"></div><div>Die casting</div></li>
-            <li class="row"><div class="dot"></div><div>Alloying</div></li>
-            <li class="row"><div class="dot"></div><div>Steel &amp; construction-related manufacturing</div></li>
+          <ul class="spec-list">
+            <li>Galvanizing</li>
+            <li>Die casting</li>
+            <li>Alloying</li>
+            <li>Steel &amp; construction-related manufacturing</li>
           </ul>
-        </div>
+        </article>
 
-        <!-- AVAILABILITY -->
-        <div class="card">
+        <article class="spec-card">
+          <div class="spec-index">04 / SUPPLY</div>
           <h3>Availability</h3>
-          <ul class="clean">
-            <li class="row"><div class="dot"></div><div>Ready stock in Dubai (subject to confirmation)</div></li>
-            <li class="row"><div class="dot"></div><div>Multi-origin supply options</div></li>
-            <li class="row"><div class="dot"></div><div>Fast coordination with UAE manufacturers &amp; galvanizing plants</div></li>
+          <ul class="spec-list">
+            <li>Ready stock in Dubai (subject to confirmation)</li>
+            <li>Multi-origin supply options</li>
+            <li>Fast coordination with UAE manufacturers &amp; galvanizing plants</li>
           </ul>
-        </div>
+        </article>
       </div>
     </section>
 
